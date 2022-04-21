@@ -1,0 +1,103 @@
+@mixin color-layout1($property, $val1, $val2) {
+
+    h1 {
+        #{$property}: $val1;
+    }
+
+    p {
+        #{$property}: $val2;
+
+    }
+    a {
+        margin-top:3em;
+    }
+}
+
+@mixin color-layout2($property, $val1, $val2) {
+
+    h1 {
+        #{$property}: $val1;
+    }
+
+    p {
+        #{$property}: $val2;
+    }
+}
+
+@mixin color-layout3($property, $val1, $val2) {
+
+    h5 {
+        #{$property}: $val1;
+    }
+
+    p {
+        #{$property} : $val2;
+    }
+
+    span {
+        #{$property} : $val2;
+    }
+}
+
+@mixin color-layout4($property, $val1) {
+
+    #{$property} {
+        color: $val1;
+    }
+
+}
+
+@mixin spacing-layout2($property, $val1) {
+    #{$property}: $val1;
+}
+
+@mixin spacing-layout3($property, $val1) {
+
+    #{$property} {
+        padding: $val1;
+    }
+
+}
+
+@mixin spacing-layout4 {
+    padding: 4em;
+
+    h1 {
+        margin-bottom: 2em;
+    }
+
+    h2 {
+        margin-bottom: 1em;
+    }
+
+    h2:last-of-type {
+        margin-bottom: 3em;
+    } 
+}
+
+@mixin spacing-layout5 {
+
+    padding: 4em; 
+
+    .p4 {
+        margin-bottom: 1.5em;
+    }
+
+    .p4:last-of-type{
+        margin-bottom: 0em;
+    }
+}
+
+@mixin spacing-layout6($property, $val1) {
+    #{$property} {
+        margin-bottom: $val1;
+    }
+}
+
+@mixin container-padding($padding, $selectors...) {
+    @for $i from 0 to length($selectors) {
+        #{nth($selectors, $i + 1)} {
+          padding: $padding;
+        }
+      }
+}
